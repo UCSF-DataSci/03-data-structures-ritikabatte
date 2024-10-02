@@ -22,8 +22,13 @@ import sys
 def word_frequency(text):
     frequencies = {} # Dictionary to store word frequencies
 
-    # Your code here
-    
+    words = text.split() 
+    for word in words: 
+        word = word.lower() 
+        if word in frequencies: 
+            frequencies[word] += 1 
+        else: 
+            frequencies[word] = 1   
     return frequencies
 
 # Scaffold for opening a file and running word_frequency() on the contents
@@ -49,3 +54,6 @@ if __name__ == "__main__":
     
     print(f"Word frequencies for '{filename}':")
     print(frequencies)
+
+# Running it terminal 
+# python3 /Users/ritikabatte02/03-data-structures-ritikabatte/02-word_frequency.py /Users/ritikabatte02/03-data-structures-ritikabatte/alice_in_wonderland.txt

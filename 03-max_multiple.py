@@ -40,9 +40,11 @@ THOUSAND_DIGIT_NUMBER = """
 
 def find_greatest_product(number_string, adjacent_digits=13):
     max_product = 0
-    
-    # Your code here
-
+    for i in range(len(number_string) - adjacent_digits + 1):
+        product = 1
+        for j in range(adjacent_digits):
+            product *= int(number_string[i + j])
+        max_product = max(max_product, product)
     return max_product
 
 if __name__ == "__main__":
